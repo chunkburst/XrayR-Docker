@@ -1,6 +1,6 @@
 #!/bin/bash
 
-XRAYR_DIR="/root/Xray/src"
+XRAYR_DIR="/root/Xray/"
 XRAYR_EXEC="${XRAYR_DIR}/XrayR"
 XRAYR_CONFIG="${XRAYR_DIR}/config.yml"
 SERVICE_NAME="xrayr.service"
