@@ -49,16 +49,23 @@ fi
 
 if [[ x"${release}" == x"centos" ]]; then
     yum install epel-release -y
-    yum install git unzip wget -y
+    yum install unzip wget -y
 else
     apt update -y
-    apt install git unzip wget -y
+    apt install wget unzip -y
 fi
 
 cd /root/
-git clone https://github.com/chunkburst/XrayR-Docker.git
-mv XrayR-Docker/src/run.sh ./run.sh
-mv XrayR-Docker Xray
-chmod +x Xray/XrayR
+mkdir Xray
+cd Xray
+echo -e "${green}Install：${plain} 开始下载XrayR程序！\n"
+wget -q -N --no-check-certificate https://raw.githubusercontent.com/chunkburst/XrayR-Docker/main/src/XrayR-linux-64-0.9.4.zip -O Xray.zip
+echo -e "${green}Install：${plain} 下载完成！开始解压\n"
+unzip Xray.zip
+rm -f Xray.zip
+cd ..
+#生成守护进程
+wget -q -N --no-check-certificate https://raw.githubusercontent.com/chunkburst/XrayR-Docker/main/src/run.sh -O run.sh
 chmod +x run.sh
+chmod +x Xray/XrayR
 bash run.sh
