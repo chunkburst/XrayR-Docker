@@ -7,6 +7,13 @@
 
 帮助你在某些极端环境下（例如Docker容器虚拟化 + 128MB内存的VPS中）成功使用XrayR
 
+如果是普通环境下，请使用官方脚本： [XrayR-project/XrayR](https://github.com/XrayR-project/XrayR)
+
+它与官方脚本的差别?
+
+- Docker虚拟化中的容器能用（官方的脚本目前似乎不能用）
+- 超迷你款（只要约200MB硬盘空间即可运行，官方脚本需至少500MB）
+
 
 
 ### 📦 快速安装
